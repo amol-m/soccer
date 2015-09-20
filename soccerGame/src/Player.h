@@ -19,10 +19,12 @@ using namespace std;
 class Player {
 public:
     Player();
+    Player(int x, int y);
     void update();
     void draw();
     
     Vec2i loc;
+    bool isActive;
     bool moveUp;
     bool moveDown;
     bool moveLeft;

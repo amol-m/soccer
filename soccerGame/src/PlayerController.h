@@ -10,12 +10,23 @@
 #define __soccerGame__PlayerController__
 
 #include <stdio.h>
-//class PlayerController {
-//public:
-//    PlayerController();
-//private:
-//    
-//};
+#include "Player.h"
+class PlayerController {
+public:
+    PlayerController();
+    void createTeams(int side1);
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+    void switchPlayer();
+    void update();
+    void draw();
+    
+    std::list<Player> players;
+private:
+    
+};
 
 #endif /* defined(__soccerGame__PlayerController__) */
 
