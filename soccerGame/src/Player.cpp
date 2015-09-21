@@ -48,5 +48,11 @@ void Player::update() {
 }
 
 void Player::draw() {
+    if(isActive) {
+        gl::color(0, 0, 1);
+//        gl::drawSolidTriangle(Vec2f(loc.x+radius*2, loc.y), Vec2f(loc.x+radius, loc.y+radius), Vec2f(loc.x+radius, loc.y-radius));
+        gl::drawStrokedCircle(loc, radius*1.5);
+        gl::color(1,1,1);
+    }
     gl::drawSolidCircle(loc, radius);
 }

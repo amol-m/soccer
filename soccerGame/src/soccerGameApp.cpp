@@ -64,12 +64,18 @@ void soccerGameApp::keyDown(cinder::app::KeyEvent event) {
 }
 
 void soccerGameApp::switchPlayer() {
+    team[activePlayer].isActive =false;
+    team[activePlayer].moveDown=false;
+    team[activePlayer].moveUp=false;
+    team[activePlayer].moveLeft=false;
+    team[activePlayer].moveRight=false;
     if(activePlayer == sizeof(team)/sizeof(team[0]) -1) {
         activePlayer = 0;
     }
     else {
         activePlayer++;
     }
+    team[activePlayer].isActive =true;
 }
 
 void soccerGameApp::keyUp(cinder::app::KeyEvent event) {
