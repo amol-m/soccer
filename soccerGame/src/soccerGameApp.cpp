@@ -2,6 +2,8 @@
 #include "cinder/gl/gl.h"
 #include "Player.h"
 #include "PlayerController.h"
+#include "cinder/gl/Texture.h"
+#include "Ball.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -19,15 +21,21 @@ class soccerGameApp : public AppNative {
     
     Player team[5];
     int activePlayer = 0;
+    Ball ball;
+    gl::Texture background;
 };
 
 void soccerGameApp::setup()
 {
     app::setWindowSize(1024, 768);
     app::setFrameRate(60.0f);
+    
+    background = gl::Texture(loadImage(loadResource("footballField.jpg")));
+    
     for(int i=0;i<5;i++) {
         team[i] = Player(512,384);
     }
+    
 }
 
 void soccerGameApp::mouseDown( MouseEvent event )
@@ -82,15 +90,21 @@ void soccerGameApp::keyUp(cinder::app::KeyEvent event) {
 void soccerGameApp::update()
 {
     team[activePlayer].update();
+    ball.update();
+//    ball.update(team, activePlayer);
 }
 
 void soccerGameApp::draw()
 {
 	// clear out the window with black
 	gl::clear( Color( 0, 0, 0 ) );
+    
+    gl::draw(background);
+    
     for(int i=0;i<5;i++) {
         team[i].draw();
     }
+    ball.draw();
 }
 
 CINDER_APP_NATIVE( soccerGameApp, RendererGl )

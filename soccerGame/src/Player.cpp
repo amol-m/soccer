@@ -10,7 +10,7 @@
 #include "cinder/Rand.h"
 #include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
-
+#include "Ball.h"
 
 
 Player::Player() {
@@ -38,6 +38,8 @@ void Player::update() {
             loc.x += 1;
         if (moveLeft)
             loc.x -= 1;
+    
+//        if
 //    }
     //non-active players automatic movement
 //    else {
