@@ -58,8 +58,13 @@ void soccerGameApp::keyDown(cinder::app::KeyEvent event) {
     }
     
     //switch player
-    if( event.getCode() == KeyEvent::KEY_SPACE ) {
+    if( event.getCode() == KeyEvent::KEY_TAB ) {
         switchPlayer();
+    }
+    
+    //release ball
+    if(event.getCode() == KeyEvent::KEY_SPACE) {
+//        playerController.releaseBall();
     }
 }
 
