@@ -14,37 +14,50 @@
 
 
 Player::Player() {
-    int x = 512;
-    int y = 384;
+    int x = app::getWindowWidth()/2;;
+    int y = app::getWindowHeight()/2;;
     loc = Vec2i(x,y);
-    radius = 10.0f;
-    moveUp = moveDown = moveLeft = moveRight = false;
+    dir = Vec4i(0,0,0,0);
+    speed = 1;
+    radius = 10;
+//    moveUp = moveDown = moveLeft = moveRight = false;
+    isActive = hasBall = false;
+    playerId = x+y;
 }
 
 Player::Player(int x, int y) {
     loc = Vec2i(x,y);
-    radius = 10.0f;
-    moveUp = moveDown = moveLeft = moveRight = false;
-//    isActive = false;
+    dir = Vec4i(0,0,0,0);
+    speed = 1;
+    radius = 10;
+//    moveUp = moveDown = moveLeft = moveRight = false;
+    isActive = hasBall = false;
+    playerId = x+y;
 }
 
 void Player::update() {
-//    if(isActive) {
-        if (moveUp)
-            loc.y -= 1;
-        if (moveDown)
-            loc.y += 1;
-        if (moveRight)
-            loc.x += 1;
-        if (moveLeft)
-            loc.x -= 1;
-    
-//        if
-//    }
-    //non-active players automatic movement
-//    else {
-    
-//    }
+    if(isActive) {
+        if (dir.y)
+            loc.y -= speed;
+        if (dir.w)
+            loc.y += speed;
+        if (dir.x)
+            loc.x += speed;
+        if (dir.z)
+            loc.x -= speed;
+    }
+    else {
+        //need an algorithm
+    }
+}
+
+void Player::releaseBall() {
+    if(hasBall) {
+        hasBall = false;
+        cout<<"Release activated"<<endl;
+        //algorithm to set power on ball
+        //figure out trajectory of ball and switch to player closest to that point
+    }
 }
 
 void Player::draw() {

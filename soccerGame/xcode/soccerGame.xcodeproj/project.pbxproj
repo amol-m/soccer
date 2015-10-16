@@ -16,7 +16,7 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		9F4E33B11BAE3DE0003AA04E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E33AF1BAE3DE0003AA04E /* Player.cpp */; };
-		9F4E33B41BAE3FA5003AA04E /* PlayerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E33B21BAE3FA5003AA04E /* PlayerController.cpp */; };
+		9F4E33B41BAE3FA5003AA04E /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E33B21BAE3FA5003AA04E /* GameController.cpp */; };
 		9F4E33B71BAE74ED003AA04E /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E33B51BAE74ED003AA04E /* Ball.cpp */; };
 		9F4E33B91BAE7734003AA04E /* footballField.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E33B81BAE7734003AA04E /* footballField.jpg */; };
 		ABDB0A8D25DE4362933D08C2 /* soccerGameApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD8F8F2685C04FCAA3C4BE9C /* soccerGameApp.cpp */; };
@@ -38,8 +38,8 @@
 		8D1107320486CEB800E47090 /* soccerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soccerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4E33AF1BAE3DE0003AA04E /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = ../src/Player.cpp; sourceTree = "<group>"; };
 		9F4E33B01BAE3DE0003AA04E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../src/Player.h; sourceTree = "<group>"; };
-		9F4E33B21BAE3FA5003AA04E /* PlayerController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerController.cpp; path = ../src/PlayerController.cpp; sourceTree = "<group>"; };
-		9F4E33B31BAE3FA5003AA04E /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerController.h; path = ../src/PlayerController.h; sourceTree = "<group>"; };
+		9F4E33B21BAE3FA5003AA04E /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../src/GameController.cpp; sourceTree = "<group>"; };
+		9F4E33B31BAE3FA5003AA04E /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = ../src/GameController.h; sourceTree = "<group>"; };
 		9F4E33B51BAE74ED003AA04E /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = ../src/Ball.cpp; sourceTree = "<group>"; };
 		9F4E33B61BAE74ED003AA04E /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = ../src/Ball.h; sourceTree = "<group>"; };
 		9F4E33B81BAE7734003AA04E /* footballField.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = footballField.jpg; path = ../resources/footballField.jpg; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 				9F4E33B51BAE74ED003AA04E /* Ball.cpp */,
 				AD8F8F2685C04FCAA3C4BE9C /* soccerGameApp.cpp */,
 				9F4E33AF1BAE3DE0003AA04E /* Player.cpp */,
-				9F4E33B21BAE3FA5003AA04E /* PlayerController.cpp */,
+				9F4E33B21BAE3FA5003AA04E /* GameController.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -136,7 +136,7 @@
 			children = (
 				57771B2DEAC24158A39145B4 /* Resources.h */,
 				9F4E33B01BAE3DE0003AA04E /* Player.h */,
-				9F4E33B31BAE3FA5003AA04E /* PlayerController.h */,
+				9F4E33B31BAE3FA5003AA04E /* GameController.h */,
 				C1E35564A9DB406D86ADACD8 /* soccerGame_Prefix.pch */,
 				9F4E33B61BAE74ED003AA04E /* Ball.h */,
 			);
@@ -228,7 +228,7 @@
 			files = (
 				9F4E33B71BAE74ED003AA04E /* Ball.cpp in Sources */,
 				9F4E33B11BAE3DE0003AA04E /* Player.cpp in Sources */,
-				9F4E33B41BAE3FA5003AA04E /* PlayerController.cpp in Sources */,
+				9F4E33B41BAE3FA5003AA04E /* GameController.cpp in Sources */,
 				ABDB0A8D25DE4362933D08C2 /* soccerGameApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

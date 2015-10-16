@@ -21,15 +21,24 @@ public:
     Player();
     Player(int x, int y);
     void update();
+    void releaseBall();
     void draw();
     
     Vec2i loc;
+    Vec4i dir;
+    int speed;
+    int radius;
+    
     bool isActive;
-    bool moveUp;
-    bool moveDown;
-    bool moveLeft;
-    bool moveRight;
-    float radius;
+    bool hasBall;
+    
+    int playerId;
+    
+//    bool moveUp;
+//    bool moveDown;
+//    bool moveLeft;
+//    bool moveRight;
+    
 };
 
 #endif /* defined(__soccerGame__Player__) */

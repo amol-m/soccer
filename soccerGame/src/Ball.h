@@ -11,22 +11,22 @@
 
 #include <stdio.h>
 #include "cinder/Vector.h"
-//#include <vector>
 #include "Player.h"
 
 class Ball {
 public:
     Ball();
-//    void update(Player* team[], int activePlayer);
-    void update();
+    void update(Player* (players)[], Player* &activePlayer);
     void draw();
+    int findClosestPlayer(Player* (players)[]);
     
-    float decay = .25f;
-    float speed;
-    cinder::Vec2f dir;
-    cinder::Vec2i loc;
-    bool isAttachedToPlayer;
-    float radius;
+    double decay = .25;
+    
+    Vec2i loc;
+    Vec4i dir;
+    double speed;
+    int radius;
+    
 private:
     
 };
