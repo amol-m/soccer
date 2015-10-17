@@ -26,10 +26,12 @@ GameController::GameController() {
 }
 
 void GameController::switchPlayer() {
+    cout<<"in switch player"<<endl;
     activePlayer->hasBall = false;
     activePlayer->isActive = false;
     activePlayer->dir.x = activePlayer->dir.y = activePlayer->dir.z = activePlayer->dir.w = 0;
     activePlayer = findClosestPlayer();
+    cout<<"id: "<<activePlayer->playerId<<endl;
     activePlayer->isActive = true;
 }
 
@@ -40,6 +42,7 @@ Player* GameController::findClosestPlayer() {
         double distToBall = sqrt( pow((ball->loc.x - players[i]->loc.x), 2) + pow((ball->loc.y - players[i]->loc.y), 2) );
         if( distToBall < minDistance) {
             closestPlayer = i;
+            minDistance = distToBall;
         }
     }
     return players[closestPlayer];

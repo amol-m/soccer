@@ -31,6 +31,7 @@ public:
     
     bool isActive;
     bool hasBall;
+    bool justReleasedBall;
     
     int playerId;
     

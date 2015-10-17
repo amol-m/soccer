@@ -23,6 +23,7 @@ Player::Player() {
 //    moveUp = moveDown = moveLeft = moveRight = false;
     isActive = hasBall = false;
     playerId = x+y;
+    justReleasedBall = false;
 }
 
 Player::Player(int x, int y) {
@@ -33,6 +34,7 @@ Player::Player(int x, int y) {
 //    moveUp = moveDown = moveLeft = moveRight = false;
     isActive = hasBall = false;
     playerId = x+y;
+    justReleasedBall = false;
 }
 
 void Player::update() {
@@ -55,6 +57,7 @@ void Player::releaseBall() {
     if(hasBall) {
         hasBall = false;
         cout<<"Release activated"<<endl;
+        justReleasedBall = true;
         //algorithm to set power on ball
         //figure out trajectory of ball and switch to player closest to that point
     }

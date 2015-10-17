@@ -24,7 +24,7 @@ Ball::Ball() {
     int x = 700;
     int y = 700;
     loc = Vec2i(x ,y);
-    speed = 10.0;
+    speed = 8.0;
     dir = Vec4i(0,0,0,0);
     radius = 7;
 }
@@ -91,7 +91,10 @@ void Ball::update(Player* (players)[], Player* &activePlayer) {
         int closestPlayerIndex = findClosestPlayer(players);
 //        cout<<closestPlayerIndex<<endl;
         Player* closestPlayer = players[closestPlayerIndex];
-        if( pow((closestPlayer->loc.x - loc.x), 2) + pow((closestPlayer->loc.y - loc.y), 2) < pow(radius, 2) ) {
+//        cout<<"just released ball: "<<closestPlayer->justReleasedBall<<endl;
+//        cout<<"lhs: "<<pow((closestPlayer->loc.x - loc.x), 2) + pow((closestPlayer->loc.y - loc.y), 2)<<" r2:"<<pow(radius + 3, 2)<<endl;
+        cout<<"ball: ( "<<loc.x<<", "<<loc.y<<" ) player: ( "<<closestPlayer->loc.x<<", "<<closestPlayer->loc.y<<" )"<<endl;
+        if( pow((closestPlayer->loc.x - loc.x), 2) + pow((closestPlayer->loc.y - loc.y), 2) < pow(radius + 3, 2) ) {
             cout<<"fucked it up"<<endl;
             activePlayer->isActive = false;
             activePlayer->hasBall = false;
@@ -113,6 +116,7 @@ int Ball::findClosestPlayer(Player* (players)[]) {
         double distToBall = sqrt( pow((loc.x - players[i]->loc.x), 2) + pow((loc.y - players[i]->loc.y), 2) );
         if( distToBall < minDistance) {
             closestPlayer = i;
+            minDistance = distToBall;
         }
     }
 //    cout<<closestPlayer<<endl;
