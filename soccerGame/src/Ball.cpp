@@ -24,7 +24,7 @@ Ball::Ball() {
     int x = 700;
     int y = 700;
     loc = Vec2i(x ,y);
-    speed = 8.0;
+    speed = maxSpeed;
     dir = Vec4i(0,0,0,0);
     radius = 7;
 }
@@ -86,19 +86,26 @@ void Ball::update(Player* (players)[], Player* &activePlayer) {
                 loc.x -= speed;
             }
         }
-        
+        if(speed < .1) {
+            speed = 0;
+        }
+        else {
+            speed *= decay;
+        }
+    
         //check if ball is in the radius of another player
         int closestPlayerIndex = findClosestPlayer(players);
 //        cout<<closestPlayerIndex<<endl;
         Player* closestPlayer = players[closestPlayerIndex];
 //        cout<<"just released ball: "<<closestPlayer->justReleasedBall<<endl;
-//        cout<<"lhs: "<<pow((closestPlayer->loc.x - loc.x), 2) + pow((closestPlayer->loc.y - loc.y), 2)<<" r2:"<<pow(radius + 3, 2)<<endl;
+        cout<<speed<<endl;
+        cout<<"lhs: "<<pow((closestPlayer->loc.x - loc.x), 2) + pow((closestPlayer->loc.y - loc.y), 2)<<" r2:"<<pow(radius + 3, 2)<<endl;
         cout<<"ball: ( "<<loc.x<<", "<<loc.y<<" ) player: ( "<<closestPlayer->loc.x<<", "<<closestPlayer->loc.y<<" )"<<endl;
         if( pow((closestPlayer->loc.x - loc.x), 2) + pow((closestPlayer->loc.y - loc.y), 2) < pow(radius + 3, 2) ) {
             cout<<"fucked it up"<<endl;
             activePlayer->isActive = false;
             activePlayer->hasBall = false;
-//            activePlayer->dir.x = activePlayer->dir.y = activePlayer->dir.z = activePlayer->dir.w = 0;
+            activePlayer->dir.x = activePlayer->dir.y = activePlayer->dir.z = activePlayer->dir.w = 0;
             activePlayer = players[closestPlayerIndex];
             activePlayer->isActive = true;
             activePlayer->hasBall = true;

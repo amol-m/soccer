@@ -75,6 +75,7 @@ void GameController::keyDown(cinder::app::KeyEvent event) {
     if(event.getCode() == cinder::app::KeyEvent::KEY_SPACE) {
         cout<<"space pressed"<<endl;
         activePlayer->releaseBall();
+        ball->speed = ball->maxSpeed;
     }
 }
 

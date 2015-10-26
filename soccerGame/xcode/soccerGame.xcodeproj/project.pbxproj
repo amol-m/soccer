@@ -19,6 +19,7 @@
 		9F4E33B41BAE3FA5003AA04E /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E33B21BAE3FA5003AA04E /* GameController.cpp */; };
 		9F4E33B71BAE74ED003AA04E /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E33B51BAE74ED003AA04E /* Ball.cpp */; };
 		9F4E33B91BAE7734003AA04E /* footballField.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E33B81BAE7734003AA04E /* footballField.jpg */; };
+		9F71606F1BDE887400EF35A6 /* Team.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F71606D1BDE887400EF35A6 /* Team.cpp */; };
 		ABDB0A8D25DE4362933D08C2 /* soccerGameApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD8F8F2685C04FCAA3C4BE9C /* soccerGameApp.cpp */; };
 		CDAF8DCADE84410EBD168134 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = DC86DD818401481DA3F2EF33 /* CinderApp.icns */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,8 @@
 		9F4E33B51BAE74ED003AA04E /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = ../src/Ball.cpp; sourceTree = "<group>"; };
 		9F4E33B61BAE74ED003AA04E /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = ../src/Ball.h; sourceTree = "<group>"; };
 		9F4E33B81BAE7734003AA04E /* footballField.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = footballField.jpg; path = ../resources/footballField.jpg; sourceTree = "<group>"; };
+		9F71606D1BDE887400EF35A6 /* Team.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Team.cpp; sourceTree = "<group>"; };
+		9F71606E1BDE887400EF35A6 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
 		AD8F8F2685C04FCAA3C4BE9C /* soccerGameApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = soccerGameApp.cpp; path = ../src/soccerGameApp.cpp; sourceTree = "<group>"; };
 		C1E35564A9DB406D86ADACD8 /* soccerGame_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = soccerGame_Prefix.pch; sourceTree = "<group>"; };
 		D269A98A71504AB4A4774542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 				AD8F8F2685C04FCAA3C4BE9C /* soccerGameApp.cpp */,
 				9F4E33AF1BAE3DE0003AA04E /* Player.cpp */,
 				9F4E33B21BAE3FA5003AA04E /* GameController.cpp */,
+				9F71606D1BDE887400EF35A6 /* Team.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -139,6 +143,7 @@
 				9F4E33B31BAE3FA5003AA04E /* GameController.h */,
 				C1E35564A9DB406D86ADACD8 /* soccerGame_Prefix.pch */,
 				9F4E33B61BAE74ED003AA04E /* Ball.h */,
+				9F71606E1BDE887400EF35A6 /* Team.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				9F4E33B11BAE3DE0003AA04E /* Player.cpp in Sources */,
 				9F4E33B41BAE3FA5003AA04E /* GameController.cpp in Sources */,
 				ABDB0A8D25DE4362933D08C2 /* soccerGameApp.cpp in Sources */,
+				9F71606F1BDE887400EF35A6 /* Team.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

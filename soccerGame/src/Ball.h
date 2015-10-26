@@ -20,11 +20,12 @@ public:
     void draw();
     int findClosestPlayer(Player* (players)[]);
     
-    double decay = .25;
+    double decay = .95;
     
     Vec2i loc;
     Vec4i dir;
     double speed;
+    double maxSpeed = 11;
     int radius;
     
 private:

@@ -56,7 +56,7 @@ void Player::update() {
 void Player::releaseBall() {
     if(hasBall) {
         hasBall = false;
-        cout<<"Release activated"<<endl;
+        cout<<"Release activated: "<<hasBall<<endl;
         justReleasedBall = true;
         //algorithm to set power on ball
         //figure out trajectory of ball and switch to player closest to that point
