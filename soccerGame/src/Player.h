@@ -19,12 +19,14 @@ using namespace std;
 class Player {
 public:
     Player();
-    Player(int x, int y);
+    Player(int gridX, int gridY, int x, int y);
     void update();
     void releaseBall();
     void draw();
     
-    Vec2i loc;
+    Vec2i grid;
+    Vec2i targetLoc;
+    Vec2d loc;
     Vec4i dir;
     int speed;
     int radius;

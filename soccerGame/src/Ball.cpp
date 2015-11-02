@@ -34,6 +34,9 @@ void Ball::update(Player* (players)[], Player* &activePlayer) {
     if(activePlayer->hasBall) {
         loc = activePlayer->loc;
         dir = activePlayer->dir;
+        
+        //if player/ball come across the path of another player, lose the ball to that
+        //other player
     }
     else {
         //move ball
@@ -86,6 +89,7 @@ void Ball::update(Player* (players)[], Player* &activePlayer) {
                 loc.x -= speed;
             }
         }
+        
         if(speed < .1) {
             speed = 0;
         }

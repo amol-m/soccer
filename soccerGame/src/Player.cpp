@@ -26,8 +26,9 @@ Player::Player() {
     justReleasedBall = false;
 }
 
-Player::Player(int x, int y) {
-    loc = Vec2i(x,y);
+Player::Player(int gridX, int gridY, int x, int y) {
+    grid = Vec2i(gridX, gridY);
+    loc = Vec2d(x,y);
     dir = Vec4i(0,0,0,0);
     speed = 1;
     radius = 10;

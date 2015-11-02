@@ -10,9 +10,11 @@
 #define __soccerGame__GameController__
 
 #include <stdio.h>
+#include "cinder/app/AppBasic.h"
+
 #include "Player.h"
 #include "Ball.h"
-#include "cinder/app/AppBasic.h"
+#include "Team.h"
 
 class GameController {
 public:
@@ -25,7 +27,9 @@ public:
 
     void switchPlayer();
     
-    Player* players[5];
+    Team* homeTeam;
+    Team* awayTeam;
+//    Player* players[5];
     Ball* ball;
     Player* activePlayer;
     

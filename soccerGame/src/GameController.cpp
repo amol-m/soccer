@@ -13,16 +13,22 @@
 using namespace ci::app;
 
 GameController::GameController() {
-    for(int i=1;i<6;i++) {
-//        int x = (int)app::getWindowWidth()/(i*100);
-//        int y = (int)app::getWindowHeight()/(i*100);
-        int x = 1024/(i+1);
-        int y = 768/(i+1);
-        players[i-1] = new Player(x,y);
-    }
-    ball = new Ball();
-    activePlayer = players[0];
-    switchPlayer();
+//    homeTeam = new Team("4-3-3");
+//    awayTeam = new Team("4-2-3-1");
+    homeTeam = new Team();
+    
+//    for(int i=1;i<6;i++) {
+////        int x = (int)app::getWindowWidth()/(i*100);
+////        int y = (int)app::getWindowHeight()/(i*100);
+//        int x = 1024/(i+1);
+//        int y = 768/(i+1);
+//        players[i-1] = new Player(x,y);
+//    }
+    //call constructors for two teams
+//    ball = new Ball();
+    activePlayer = homeTeam->players[0]; //using overloaded [] operator
+    activePlayer->isActive = true;
+//    switchPlayer();
 }
 
 void GameController::switchPlayer() {
@@ -38,14 +44,14 @@ void GameController::switchPlayer() {
 Player* GameController::findClosestPlayer() {
     int closestPlayer;
     double minDistance = 1024;
-    for(int i=0;i<5;i++) {
-        double distToBall = sqrt( pow((ball->loc.x - players[i]->loc.x), 2) + pow((ball->loc.y - players[i]->loc.y), 2) );
+    for(int i=0;i<11;i++) {
+        double distToBall = sqrt( pow((ball->loc.x - homeTeam->players[i]->loc.x), 2) + pow((ball->loc.y - homeTeam->players[i]->loc.y), 2) );
         if( distToBall < minDistance) {
             closestPlayer = i;
             minDistance = distToBall;
         }
     }
-    return players[closestPlayer];
+    return homeTeam->players[closestPlayer];
 }
 
 void GameController::keyDown(cinder::app::KeyEvent event) {
@@ -98,15 +104,17 @@ void GameController::keyUp(cinder::app::KeyEvent event) {
 
 void GameController::update() {
 //    cout<<"y: "<<activePlayer->dir.y<<" x: "<<activePlayer->dir.x<<endl;
-    for(int i=0;i<5;i++) {
-        players[i]->update();
-    }
-    ball->update(players, activePlayer);
+//    for(int i=0;i<5;i++) {
+//        players[i]->update();
+//    }
+    homeTeam->update(activePlayer);
+//    ball->update(players, activePlayer);
 }
 
 void GameController::draw() {
-    for(int i=0;i<5;i++) {
-        players[i]->draw();
+    for(int i=0;i<11;i++) {
+        homeTeam->players[i]->draw();
+//        awayTeam->players[i]->draw();
     }
-    ball->draw();
+//    ball->draw();
 }

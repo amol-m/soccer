@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A1A11AC1-D0E6-45A5-A07B-B181DAF00FB4</string>
 	<key>IDESourceControlProjectName</key>
-	<string>soccerGame</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C74704C6A699C25AE4D68208BFD864A34301C001</key>
 		<string>github.com:amol-m/soccer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>soccerGame/xcode/soccerGame.xcodeproj</string>
+	<string>soccerGame/xcode/soccerGame.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C74704C6A699C25AE4D68208BFD864A34301C001</key>
